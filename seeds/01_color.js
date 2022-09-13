@@ -4,6 +4,7 @@
  */
 exports.seed = async function(knex) {
   // Deletes ALL existing entries
+  // await knex.schema.raw('TRUNCATE color CASCADE')
   await knex('color').del()
   await knex('color').insert([
     {id: 1, name: 'orange_lad'},

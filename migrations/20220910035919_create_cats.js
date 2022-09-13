@@ -8,6 +8,7 @@ exports.up = function(knex) {
     table.string('name', 255);
     table.integer('color_id');
     table.integer('favorite_food_id');
+    table.string('image', 255);
     table.foreign('color_id').references('color.id');
     table.foreign('favorite_food_id').references('favorite_food.id');
   })
@@ -22,9 +23,6 @@ exports.down = function(knex) {
     table.dropForeign('color_id');
     table.dropForeign('favorite_food_id');
   })
-//   .then(()=>{}
-
-//   )
   .then(() =>{
     return knex.schema.dropTableIfExists('cat')
   })
