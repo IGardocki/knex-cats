@@ -4,7 +4,7 @@
  */
 exports.up = function(knex) {
   return knex.schema.createTable('cat', table => {
-    table.increments();
+    table.increments('id');
     table.string('name', 255);
     table.integer('color_id');
     table.integer('favorite_food_id');
