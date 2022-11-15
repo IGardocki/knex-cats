@@ -1,8 +1,15 @@
 const express = require('express');
 const app = express();
 const port = 8082;
-const knex = require('knex')(require('../knexfile.js')["development"]);
+const environment = process.env.ENVIRONMENT || 'development'
+const knex = require('knex')(require('../knexfile.js')[environment]);
 const cors = require('cors');
+
+console.log('process.env.ENVIRONMENT:', process.env.ENVIRONMENT);
+// from tutorial at https://gist.github.com/NigelEarle/80150ff1c50031e59b872baf0e474977
+// const environment = process.env.ENVIRONMENT || 'development'
+// const config = require('../knexfile.js')[environment];
+// module.exports = require('knex')(config);
 
 app.use(cors())
 app.use(express.json())

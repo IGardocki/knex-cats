@@ -8,7 +8,7 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - DATABASE_HOST=127.0.0.1
+      - DATABASE_HOST=cat-db
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=docker
     networks:
@@ -16,6 +16,8 @@ services:
 
   cat-server:
    build: ./cat-server
+   ports: 
+    - "8082:8082"
    depends_on:
      - cat-db
    networks:
@@ -23,6 +25,8 @@ services:
 
   cat-server-app:
    build: ./cat-server-app
+   ports: 
+     - "3000:3000"
    depends_on:
      - cat-db
      - cat-server
