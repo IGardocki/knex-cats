@@ -5,7 +5,10 @@ const environment = process.env.ENVIRONMENT || 'development'
 const knex = require('knex')(require('../knexfile.js')[environment]);
 const cors = require('cors');
 
-console.log('process.env.ENVIRONMENT:', process.env.ENVIRONMENT);
+// THESE ARE NEVER LOGGED
+console.log('environment:', environment);
+console.log('process.env.NODE_ENV:', process.env.NODE_ENV);
+console.log('process.env:', process.env);
 // from tutorial at https://gist.github.com/NigelEarle/80150ff1c50031e59b872baf0e474977
 // const environment = process.env.ENVIRONMENT || 'development'
 // const config = require('../knexfile.js')[environment];

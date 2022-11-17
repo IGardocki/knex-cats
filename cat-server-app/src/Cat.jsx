@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { CatContext } from "./CatContext";
+import { Container, Row, Card } from 'react-bootstrap';
+
 import styled from 'styled-components';
 
 const CatImg = styled.img`
@@ -10,15 +12,19 @@ export const Cat = () => {
     const { cat, setCat } = useContext(CatContext);
 
     return (
-        <ul>
+        <Container style={{ maxHeight: '100vh' }}>
             {cat.map(cat => {
                 return (
-                    <>
-                        <li>{`${cat.name}`}</li>
-                        <CatImg src={cat.image} />
-                    </>
+                    // <Row>
+                        <Card key={cat.id}>
+                            <Card.Title>{`${cat.name}`}</Card.Title>
+                            <Card.Img src={cat.image} style={{height: '20vh', width: '20vw'}}/>
+                        </Card>
+                    // </Row>
+
                 )
             })}
-        </ul>
+
+        </Container>
     )
 }

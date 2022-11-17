@@ -8,6 +8,7 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
+      // host: 'cat-db',
       host: '127.0.0.1',
       password: 'docker',
       user: 'postgres',
@@ -35,10 +36,11 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password',
-
+      host: 'cat-db',
+      password: 'docker',
+      user: 'postgres',
+      port: 5432,
+      database: 'cat_db'
     },
     pool: {
       min: 2,

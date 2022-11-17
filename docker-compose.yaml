@@ -15,13 +15,15 @@ services:
       - demo
 
   cat-server:
-   build: ./cat-server
-   ports: 
-    - "8082:8082"
-   depends_on:
+    build: ./cat-server
+    ports: 
+     - "8082:8082"
+    environment:
+     - ENVIRONMENT=production
+    depends_on:
      - cat-db
-   networks:
-      - demo
+    networks:
+     - demo
 
   cat-server-app:
    build: ./cat-server-app
