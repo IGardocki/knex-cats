@@ -6,8 +6,14 @@ This is a simple project with the goals of:
 2. Creating a server to serve that data.
 3. Creating a simple React App to present that data to a user.
 
-docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 \
--v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
+```bash
+docker run --rm --name pg-docker \
+  -e POSTGRES_PASSWORD=docker \
+  -e POSTGRES_DB=cat_db \
+  -d -p 5432:5432 \
+  -v pgdata:/var/lib/postgresql/data \
+  postgres
+```
 
 ## To Start
 
