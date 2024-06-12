@@ -17,26 +17,27 @@ docker run --rm --name pg-docker \
 
 ## To Start
 
-#### Run `npm i` in the terminal in the main directory to install packages
-
-#### Run `npm start` in the terminal in main directory to start server
-
-#### Navigate to cat-server-app (run cd cat-server-app in terminal), and run npm i to install packages
-
-#### Finally, run npm start in the terminal in the cat-server-app directory to start the react app
+- Run `npm i` in the terminal in the main directory to install packages
+- Run `npm start` in the terminal in main directory to start server
+- Navigate to cat-server-app (run `cd cat-server-app` in terminal), and `run
+npm i` to install packages
+- Finally, run `npm start` in the terminal in the cat-server-app directory to
+  start the react app
 
 ### Things I learned
 
-#### Express has a middleware called cors that lets your react app access your localhost that your server is listening on. To use this, (after installing express, of course!)
+- Express has a middleware called cors that lets your react app access your
+  localhost that your server is listening on. To use this, (after installing
+  express, of course!)
 
-run npm i cors in terminal
+  - run `npm i cors` in terminal
+  - in your app.js (or whatever you're calling your server file), use:
 
-in your app.js (or whatever you're calling your server file), use:
+    ```javascript
+    const cors = require("cors");
+    app.use(cors());
+    ```
 
-const cors = require('cors');
-
-app.use(cors());
-
-#### When using React within the context of a larger project, there can be some weirdness because react apps automatically create .git files on generation
-
-<https://stackoverflow.com/questions/62056294/github-folders-have-a-white-arrow-on-them>
+- When using React within the context of a larger project, there can be some
+  weirdness because react apps automatically create .git files on generation:
+  <https://stackoverflow.com/questions/62056294/github-folders-have-a-white-arrow-on-them>
